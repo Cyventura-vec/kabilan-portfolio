@@ -1,0 +1,78 @@
+/* ==========================================================================
+   z3r0byte Base Styles & Scanline Effects
+   ========================================================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+    font-family: var(--font-mono) !important;
+}
+
+html, body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CRT Scanline Overlay */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+/* Container */
+.terminal-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+}
+
+/* Blinking Terminal Cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    vertical-align: -0.15em;
+    background-color: var(--text-primary);
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Section Dividers */
+.divider {
+    color: var(--text-dimmer);
+    margin: 28px 0 16px 0;
+    user-select: none;
+    font-weight: normal;
+}
+
+/* Typography Utilities */
+p {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.text-dim { color: var(--text-dim); }
+.text-alert { color: var(--text-alert); }
+.text-highlight { color: var(--text-highlight); }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="z3r0byte — Security Research, Low-level Systems, Binary Analysis, and Network Exploitation.">
+    <title>z3r0byte // security research</title>
+    
+    <!-- Modular Master Stylesheet Bundle -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <main class="terminal-wrapper">
+        <!-- ASCII Art Header -->
+        <header>
+            <pre class="ascii-banner">
+  ______ ____ _____   ___  ______ __   __ _____ _____ 
+ |___  /|___ /|  _ \ / _ \| __ ) \ \ / /|_   _| ____|
+    / /   |_ \| |_) | | | |  _ \  \ V /   | | |  _|  
+   / /   ___) |  _ <| |_| | |_) |  | |    | | | |___ 
+  /_/   |____/|_| \_\\___/|____/   |_|    |_| |_____|<span class="cursor"></span></pre>
+            <div class="terminal-meta">
+                <span>tty1 /dev/pts/0 [session: 0x9f2a] [node: unindexed]</span> &bull; 
+                <span id="x-term-metrics">uptime: 0.0s | entropy: 0x9f8b4</span>
+            </div>
+        </header>
+
+        <!-- Section: About -->
+        <div class="divider">// ─────────────────────────────── //</div>
+        <section aria-labelledby="about-title">
+            <h1 id="about-title" class="section-title">Identity &amp; Directive</h1>
+            <p><span class="text-dim">[0x00]</span> Operating across unmapped ASN allocations and private infrastructure.</p>
+            <p><span class="text-dim">[0x01]</span> Core focus: low-level memory corruption, protocol subversion, asymmetric telemetry.</p>
+            <p><span class="text-dim">[0x02]</span> Silence is operational security. Code is intent.</p>
+        </section>
+
+        <!-- Section: Skills -->
+        <div class="divider">// ─────────────────────────────── //</div>
+        <section aria-labelledby="skills-title">
+            <h2 id="skills-title" class="section-title">Technical Capabilities</h2>
+            <table class="terminal-table">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Specialization</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reverse Engineering</td>
+                        <td>x86_64 / ARM disassembly, kernel hooks, anti-debug bypass</td>
+                        <td class="status-active">[ACTIVE]</td>
+                    </tr>
+                    <tr>
+                        <td>Network Exploitation</td>
+                        <td>Zero-day triage, packet injection, covert C2 infrastructure</td>
+                        <td class="status-active">[ACTIVE]</td>
+                    </tr>
+                    <tr>
+                        <td>OSINT</td>
+                        <td>Infrastructure correlation, darknet graph indexing, telemetry</td>
+                        <td class="status-active">[ACTIVE]</td>
+                    </tr>
+                    <tr>
+                        <td>Malware Analysis</td>
+                        <td>Static/dynamic binary deconstruction, memory unpacking, shellcode</td>
+                        <td class="status-active">[ACTIVE]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section: Projects -->
+        <div class="divider">// ─────────────────────────────── //</div>
+        <section aria-labelledby="projects-title">
+            <h2 id="projects-title" class="section-title">Classified Projects</h2>
+            
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-codename">PROJECT: NULLTRACE</span>
+                    <span class="project-tag">[RESTRICTED]</span>
+                </div>
+                <div class="project-desc">
+                    Kernel-space evasion framework and unlinked memory allocation sanitization.
+                </div>
+                <div class="project-stack">
+                    Stack: C / Assembly / eBPF / Ring 0
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-codename">PROJECT: SPECTRAL-PULSE</span>
+                    <span class="project-tag">[RESTRICTED]</span>
+                </div>
+                <div class="project-desc">
+                    Covert timing-based data exfiltration across asymmetric network boundaries.
+                </div>
+                <div class="project-stack">
+                    Stack: Rust / Raw Sockets / Protocol Mutilation
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-codename">PROJECT: KERNELGHOST</span>
+                    <span class="project-tag">[RESEARCH]</span>
+                </div>
+                <div class="project-desc">
+                    Dynamic binary translator and automated anti-analysis stub generator.
+                </div>
+                <div class="project-stack">
+                    Stack: C++20 / LLVM IR / x86_64 Microcode
+                </div>
+            </article>
+        </section>
+
+        <!-- Section: Contact (PGP Only) -->
+        <div class="divider">// ─────────────────────────────── //</div>
+        <section aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section-title">Public Key Verification</h2>
+            <p class="text-dim">No mail server listening. Direct encrypted transmissions only.</p>
+            <pre class="pgp-block">-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP v2.1.0 (z3r0byte-vault)
+
+mQGNBF+92ZcBDADX9k8Wv... [truncated 4096-bit RSA/ED25519 payload] ...
+=9f2a
+-----END PGP PUBLIC KEY BLOCK-----
+<span class="text-dim">FINGERPRINT:</span> <span class="pgp-fingerprint">7B94 0F2A 44C8 E190 65D3 89A1 9F2A 112C BEEF 03F2</span></pre>
+        </section>
+
+        <!-- STAGE 4 CTF Hidden Element -->
+        <div id="x-ref" data-enc="030f18430a071a5a0a1d1d040b" style="display:none" aria-hidden="true"></div>
+
+        <!-- Terminal Footer -->
+        <footer class="terminal-footer">
+            <div>// this site contains a puzzle. good luck.</div>
+        </footer>
+    </main>
+
+    <!-- Modular Script Inclusions -->
+    <script src="assets/js/crypto-engine.js"></script>
+    <script src="assets/js/interactions.js"></script>
+    <script src="assets/js/metrics.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
