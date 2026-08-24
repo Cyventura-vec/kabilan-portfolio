@@ -29,9 +29,7 @@ All challenge hints, cryptographic parameters, and hidden onion endpoints are ce
 # z3r0byte Terminal Portfolio & CTF Challenge Environment Configuration
 # ==============================================================================
 
-# CTF Challenge Hints & Onion Service Endpoint
-HINT="check options"
-HINT_BASE64="Y2hlY2sgb3B0aW9ucw=="
+# CTF Challenge Onion Service Endpoint
 ONION_LINK="http://wjk7abc294k.onion"
 ONION_HOST="wjk7abc294k.onion"
 
@@ -57,11 +55,6 @@ The portfolio contains an embedded 4-stage CTF challenge for security researcher
 ```
 [ Stage 1: Recon Headers ] ──► [ Stage 2: Optionsbleed ] ──► [ Stage 3: JS XOR Crypto ] ──► [ Stage 4: Onion Endpoint ]
 ```
-
-### Stage 1: Recon Headers
-- **Vector**: HTTP Response Headers (`_headers` / `nginx/conf.d/security_headers.conf`)
-- **Header**: `X-Build-Ref: Y2hlY2sgb3B0aW9ucw==`
-- **Decode**: Base64 decoding `Y2hlY2sgb3B0aW9ucw==` yields the hint: `check options`.
 
 ### Stage 2: Optionsbleed Simulation
 - **Vector**: Nginx `OPTIONS` HTTP request handling (`nginx/conf.d/optionsbleed.conf`)
