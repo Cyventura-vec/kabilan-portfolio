@@ -88,17 +88,19 @@ kabilan-portfolio/
 ├── .env                  # Challenge hint, onion link, and cryptographic parameters
 ├── .env.example          # Environment configuration template
 ├── .gitignore            # Git exclusion rules
+├── Makefile              # Automation rules (dev, build, serve, test, clean)
 ├── README.md             # Project documentation
-├── index.html            # Core terminal interface & Stage 4 challenge carrier
-├── nginx.conf            # Nginx HTTP server configuration with Optionsbleed mapping
+├── next.config.mjs       # Next.js configuration and response header injection
+├── package.json          # Node dependencies and build scripts
+├── tailwind.config.ts    # Tailwind CSS design system configuration
+├── tsconfig.json         # TypeScript compiler configuration
+├── app/                  # Next.js 14 App Router (layout, page, styles)
+├── components/           # React UI components (Hero, Nav, Projects, Skills, etc.)
+├── data/                 # Portfolio content definitions (projects, skills, education)
+├── public/               # Static assets & PDF resources
+├── types/                # TypeScript type declarations
 ├── _headers              # Static host response header definitions (Netlify / Cloudflare)
-├── assets/
-│   ├── style.css         # Terminal CSS stylesheet bundle
-│   ├── main.js           # Master runtime bootstrapper
-│   └── js/
-│       ├── crypto-engine.js  # Telemetry & Stage 3 challenge engine
-│       ├── interactions.js   # Terminal hotkey hooks & card listeners
-│       └── metrics.js        # Dynamic uptime & entropy renderer
+├── nginx.conf            # Nginx HTTP reverse proxy configuration with Optionsbleed mapping
 └── nginx/
     └── conf.d/
         ├── optionsbleed.conf      # OPTIONS method memory bleed simulation header map
@@ -109,34 +111,39 @@ kabilan-portfolio/
 
 ## 🚀 Running Locally
 
-### Option A: Using Nginx (Recommended for CTF header simulation)
-
-Run Nginx pointing to `nginx.conf`:
+### Option A: Using Makefile (Recommended)
 
 ```bash
-nginx -c $(pwd)/nginx.conf
+# View available Makefile targets
+make help
+
+# Run Next.js dev server
+make dev
+
+# Build production bundle
+make build
+
+# Start production server + Nginx reverse proxy (Port 8085)
+make serve
+
+# Run CTF Stage 1 & Stage 2 verification tests
+make test
+
+# Stop background server instances
+make stop
 ```
 
-Access the terminal portfolio at `http://localhost:8080`.
-
-To test the **Stage 1 & Stage 2 headers**:
+### Option B: Direct NPM Workflow
 
 ```bash
-# Stage 1: Recon Headers
-curl -I http://localhost:8080
+# Install dependencies
+npm install
 
-# Stage 2: Optionsbleed Header Leak
-curl -X OPTIONS -I http://localhost:8080
-```
+# Start Next.js development server (http://localhost:3000)
+npm run dev
 
-### Option B: Using standard HTTP Server (Static Mode)
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# Node / npx
-npx serve .
+# Build for production
+npm run build
 ```
 
 ---
