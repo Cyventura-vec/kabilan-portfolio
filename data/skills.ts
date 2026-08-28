@@ -20,6 +20,18 @@ export const skills: SkillCategory[] = [
       "Express",
       "PostgreSQL",
       "Redis",
+      "RESTful API Design",
+    ]
+  },
+  {
+    name: "Security & Best Practices",
+    skills: [
+      "Input Validation",
+      "Authentication & Authorization",
+      "Secure Coding",
+      "Data Protection",
+      "OWASP Principles",
+      "Dependency Auditing",
     ]
   },
   {

@@ -7,9 +7,9 @@ export const experience: ExperienceEntry[] = [
     dateRange: "2022 – Present",
     bullets: [
       "Building and maintaining backend services and REST APIs for a B2B SaaS product used by small finance and operations teams.",
-      "Designed and migrated several PostgreSQL schemas, improving query performance and cutting report generation time by around 40%.",
-      "Set up CI/CD pipelines using GitHub Actions and manages deployments on AWS EC2 and S3.",
-      "Reviews pull requests, participates in architecture discussions, and occasionally argues about whether a particular abstraction is actually necessary.",
+      "Designed and migrated several PostgreSQL schemas, improving query performance and cutting report generation time by around 40%; ensured proper data access controls and audit logging.",
+      "Set up CI/CD pipelines using GitHub Actions and manages deployments on AWS EC2 and S3, with a focus on secure secret management and access controls.",
+      "Reviews pull requests with an eye toward security implications, data validation, and edge cases; participates in architecture discussions about tradeoffs between features and robustness.",
     ]
   },
   {
