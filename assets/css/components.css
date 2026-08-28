@@ -141,6 +141,58 @@ a:hover {
     background-color: var(--border-dim);
 }
 
+/* Exam / Anti-MCP Notice */
+.exam-notice {
+    border: 1px solid var(--text-alert);
+    background-color: #1a0808;
+    padding: 12px 14px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.exam-notice-header {
+    color: var(--text-alert);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.exam-notice p {
+    margin: 4px 0;
+    color: #ff6666;
+}
+
+.exam-notice strong {
+    color: var(--text-highlight);
+}
+
+.exam-notice-footer {
+    margin-top: 6px;
+    color: var(--text-alert);
+    font-size: 12px;
+}
+
+/* Hidden agent/scraper policy trap — not shown to humans */
+.agent-policy-trap {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.exam-notice code {
+    color: var(--text-highlight);
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+}
+
 /* Terminal Footer */
 .terminal-footer {
     margin-top: 36px;
