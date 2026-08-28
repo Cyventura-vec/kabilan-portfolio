@@ -36,7 +36,7 @@ export function Hero() {
             </p>
 
             <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
-              Kabilam Devraj
+              Kabilan Devraj
               <br />
               <span className="bg-gradient-to-r from-emerald-400 to-sky-500 bg-clip-text text-transparent">
                 builds software.
@@ -72,7 +72,7 @@ export function Hero() {
                   <span className="text-emerald-500">$</span> cat about.json
                 </div>
                 <div className="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-300">
-                  <div><span className="text-sky-400">&quot;name&quot;</span><span className="text-slate-400">: </span><span className="text-emerald-400">&quot;Kabilam Devraj&quot;</span><span className="text-slate-400">,</span></div>
+                  <div><span className="text-sky-400">&quot;name&quot;</span><span className="text-slate-400">: </span><span className="text-emerald-400">&quot;Kabilan Devraj&quot;</span><span className="text-slate-400">,</span></div>
                   <div><span className="text-sky-400">&quot;role&quot;</span><span className="text-slate-400">: </span><span className="text-emerald-400">&quot;Software Engineer&quot;</span><span className="text-slate-400">,</span></div>
                   <div><span className="text-sky-400">&quot;location&quot;</span><span className="text-slate-400">: </span><span className="text-emerald-400">&quot;Chennai, India&quot;</span><span className="text-slate-400">,</span></div>
                   <div><span className="text-sky-400">&quot;stack&quot;</span><span className="text-slate-400">: [</span></div>
