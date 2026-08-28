@@ -1,0 +1,2 @@
+import { experience } from "@/data/experience"; import { ExperienceCard } from "./ExperienceCard"; import { SectionReveal } from "./SectionReveal";
+export function Experience() { return <section id="experience" className="section border-y border-slate-200 dark:border-white/10"><SectionReveal><p className="eyebrow">02 / Experience</p><h2 className="section-title mb-10">Where I&apos;ve made an impact.</h2><div className="max-w-3xl">{experience.map((entry, index) => <ExperienceCard entry={entry} key={index} />)}</div></SectionReveal></section>; }

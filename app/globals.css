@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-stone-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-[#0a0c0b] dark:text-slate-100; }
+  ::selection { @apply bg-accent/25 text-inherit; }
+}
+@layer components {
+  .section { @apply mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28; }
+  .eyebrow { @apply mb-3 font-mono text-xs font-semibold uppercase tracking-[.18em] text-accent; }
+  .section-title { @apply text-3xl font-semibold tracking-tight sm:text-4xl; }
+  .surface { @apply border border-slate-200 bg-white dark:border-white/10 dark:bg-white/[.03]; }
+}

@@ -1,0 +1,2 @@
+import { projects } from "@/data/projects"; import { ProjectCard } from "./ProjectCard"; import { SectionReveal } from "./SectionReveal";
+export function Projects() { return <section id="projects" className="section"><SectionReveal><p className="eyebrow">03 / Selected work</p><h2 className="section-title mb-10">Things I&apos;ve built.</h2><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{projects.map(project => <ProjectCard project={project} key={project.title} />)}</div></SectionReveal></section>; }
