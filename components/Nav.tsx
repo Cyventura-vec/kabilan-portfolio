@@ -9,11 +9,8 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-stone-50/90 backdrop-blur dark:border-white/10 dark:bg-[#0a0c0b]/90">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
-        <a href="#top" className="flex items-center gap-2 font-mono text-sm font-bold tracking-tight">
-          <span>z3r0byte</span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-500 border border-emerald-500/30">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"></span> SECURE
-          </span>
+        <a href="#top" className="font-mono text-sm font-bold tracking-tight">
+          kabilam.dev
         </a>
         <div className="hidden items-center gap-6 md:flex">
           {links.map((link) => (

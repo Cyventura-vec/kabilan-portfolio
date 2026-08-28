@@ -2,33 +2,36 @@ import type { ExperienceEntry } from "@/types";
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "Principal Vulnerability Researcher",
-    company: "ShadowLab Security / Autonomous Systems",
-    dateRange: "2023 – Present",
+    role: "Software Engineer",
+    company: "Stackvine, Chennai",
+    dateRange: "2022 – Present",
     bullets: [
-      "Lead reverse engineering of x86_64 and ARM binary payloads, zero-day bug triage, and covert command-and-control (C2) protocol design.",
-      "Engineered kernel-level memory corruption analysis framework for critical infrastructure defensive audits.",
-      "Developed asymmetric telemetry monitoring tools for protocol subversion detection."
+      "Building and maintaining backend services and REST APIs for a B2B SaaS product used by small finance and operations teams.",
+      "Designed and migrated several PostgreSQL schemas, improving query performance and cutting report generation time by around 40%.",
+      "Set up CI/CD pipelines using GitHub Actions and manages deployments on AWS EC2 and S3.",
+      "Reviews pull requests, participates in architecture discussions, and occasionally argues about whether a particular abstraction is actually necessary.",
     ]
   },
   {
-    role: "Senior Kernel & Systems Engineer",
-    company: "NullTrace Research Labs",
-    dateRange: "2020 – 2023",
+    role: "Software Engineer",
+    company: "Kodelabs, Chennai",
+    dateRange: "2019 – 2022",
     bullets: [
-      "Engineered eBPF telemetry hooks, ring-0 anti-debugging stubs, and timing-based covert data exfiltration prototypes.",
-      "Optimized packet injection engines achieving 10Gbps line-rate network protocol analysis.",
-      "Built dynamic binary translator for anti-analysis detection."
+      "Developed internal and customer-facing features for a project management web application built on Node.js and React.",
+      "Built a notification service handling email and in-app alerts, processing around 50,000 events per day.",
+      "Refactored legacy API endpoints to REST conventions, added proper input validation, and improved error handling across the codebase.",
+      "Collaborated with the product team to translate feature specs into working software without excessive back-and-forth.",
     ]
   },
   {
-    role: "Binary Analysis Specialist",
-    company: "Asymmetric Cyber Operations",
-    dateRange: "2018 – 2020",
+    role: "Software Engineering Intern",
+    company: "Nexar Systems, Chennai",
+    dateRange: "2018 – 2019",
     bullets: [
-      "Performed static and dynamic deconstruction of untrusted Linux and Windows binaries.",
-      "Automated memory unpacking and shellcode extraction pipelines using IDA Pro and Volatility.",
-      "Maintained custom network emulators to triage malicious protocols."
+      "Wrote REST API endpoints for a logistics management tool using Express.js and MySQL.",
+      "Fixed bugs, learned how production deployments actually work, and read a lot of code that was not yet familiar.",
+      "Learned Git workflows, code reviews, and why pushing directly to main is a bad idea.",
+      "Built a small internal reporting module that generated weekly summaries from raw database records.",
     ]
   }
 ];

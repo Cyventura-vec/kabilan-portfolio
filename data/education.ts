@@ -2,21 +2,21 @@ import type { Certification, EducationEntry } from "@/types";
 
 export const education: EducationEntry[] = [
   {
-    title: "B.S. Computer Science & Systems Security",
-    institution: "Institute of Advanced Technology",
+    title: "B.E. Computer Science and Engineering",
+    institution: "Velammal Engineering College, Chennai",
     years: "2014 – 2018"
   }
 ];
 
 export const certifications: Certification[] = [
   {
-    title: "Offensive Security Certified Professional (OSCP)",
-    issuer: "OffSec Verification Credential",
-    year: "2020"
+    title: "AWS Certified Developer – Associate",
+    issuer: "Amazon Web Services",
+    year: "2021"
   },
   {
-    title: "eLearnSecurity Certified eXploitation Expert (GXPN)",
-    issuer: "GIAC / OffSec",
-    year: "2022"
+    title: "Meta Back-End Developer Certificate",
+    issuer: "Coursera / Meta",
+    year: "2020"
   }
 ];

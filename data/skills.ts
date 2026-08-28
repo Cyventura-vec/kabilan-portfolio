@@ -2,36 +2,35 @@ import type { SkillCategory } from "@/types";
 
 export const skills: SkillCategory[] = [
   {
-    name: "Reverse Engineering & Exploitation",
+    name: "Languages",
     skills: [
-      "x86_64 / ARM Disassembly",
-      "Kernel Hooks & Drivers",
-      "Zero-Day Triage",
-      "Anti-Debug Bypass",
-      "Memory Unpacking",
-      "Covert C2 Channels"
-    ]
-  },
-  {
-    name: "Languages & Low-Level Stack",
-    skills: [
-      "C / C++20",
-      "Assembly (x86_64 / ARM64)",
-      "Rust",
+      "TypeScript",
+      "JavaScript",
       "Python",
-      "eBPF / bpftrace",
-      "LLVM IR"
+      "Java",
+      "SQL",
     ]
   },
   {
-    name: "Security Analysis Tooling",
+    name: "Frameworks & Tools",
     skills: [
-      "Ghidra & IDA Pro",
-      "GDB / LLDB Debugging",
-      "Volatility 3 Memory Forensics",
-      "Wireshark / tshark",
-      "QEMU / KVM Virtualization",
-      "Linux Kernel Internal APIs"
+      "React",
+      "Node.js",
+      "Next.js",
+      "Express",
+      "PostgreSQL",
+      "Redis",
+    ]
+  },
+  {
+    name: "Infrastructure & Workflow",
+    skills: [
+      "AWS",
+      "Docker",
+      "Linux",
+      "Git",
+      "GitHub Actions",
+      "CI/CD",
     ]
   }
 ];

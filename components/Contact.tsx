@@ -16,70 +16,73 @@ export function Contact() {
 
     if (!/^\S+@\S+\.\S+$/.test(email) || !body) {
       setStatus("error");
-      setMessage("[Please complete all required fields with a valid PGP/Email identity.]");
+      setMessage("Please fill in all fields with a valid email address.");
       return;
     }
 
     try {
       setStatus("success");
-      setMessage("[Encrypted transmission queued for secure delivery.]");
+      setMessage("Message received. I'll get back to you.");
       event.currentTarget.reset();
     } catch {
       setStatus("error");
-      setMessage("[Transmission failure. Verify PGP key payload.]");
+      setMessage("Something went wrong. Try emailing directly.");
     }
   }
 
   return (
     <section id="contact" className="section border-t border-slate-200 dark:border-white/10">
       <SectionReveal>
-        <p className="eyebrow">05 / SECURE TRANSMISSION</p>
+        <p className="eyebrow">06 / Contact</p>
         <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
           <div>
-            <h2 className="section-title">Public Key Verification</h2>
+            <h2 className="section-title">Get in touch.</h2>
             <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
-              No mail server listening. Direct encrypted transmissions only. Verify fingerprint prior to dispatching payloads.
+              If you have a question, a project in mind, or just want to talk about software, send a message. I check email regularly and try to respond within a day or two.
             </p>
-
-            {/* PGP Public Key Block Card */}
-            <div className="mt-6 rounded-xl border border-slate-800 bg-[#090b10] p-5 font-mono text-xs text-slate-300">
-              <div className="text-slate-400">-----BEGIN PGP PUBLIC KEY BLOCK-----</div>
-              <div className="text-slate-400">Version: OpenPGP v2.1.0 (z3r0byte-vault)</div>
-              <div className="my-3 break-all text-slate-500">
-                mQGNBF+92ZcBDADX9k8Wv... [truncated 4096-bit RSA/ED25519 payload] ... =9f2a
+            <div className="mt-6 space-y-3 font-mono text-sm">
+              <div>
+                <span className="text-slate-400">email</span>
+                <span className="mx-2 text-slate-400">/</span>
+                <span className="text-accent">kabilam.devraj@gmail.com</span>
               </div>
-              <div className="text-slate-400">-----END PGP PUBLIC KEY BLOCK-----</div>
-              <div className="mt-4 border-t border-slate-800 pt-3">
-                <span className="text-slate-500">FINGERPRINT:</span>{" "}
-                <span className="font-bold text-emerald-400">7B94 0F2A 44C8 E190 65D3 89A1 9F2A 112C BEEF 03F2</span>
+              <div>
+                <span className="text-slate-400">github</span>
+                <span className="mx-2 text-slate-400">/</span>
+                <span className="text-accent">github.com/kabilam-devraj</span>
+              </div>
+              <div>
+                <span className="text-slate-400">twitter</span>
+                <span className="mx-2 text-slate-400">/</span>
+                <span className="text-accent">@kabilamdev</span>
               </div>
             </div>
           </div>
 
           <form onSubmit={submit} className="surface rounded-xl p-5 sm:p-7" noValidate>
-            <h3 className="font-mono text-sm font-semibold text-emerald-400">[ Encrypted Dispatch Portal ]</h3>
+            <h3 className="font-mono text-sm font-semibold text-accent">Send a message</h3>
             <label className="mt-4 block text-sm font-medium">
-              Return Routing Identifier / Email
+              Your Email
               <input
                 name="email"
                 type="email"
                 required
                 className="mt-2 w-full rounded-md border border-slate-300 bg-transparent px-3 py-2.5 outline-none focus:border-accent dark:border-white/20"
-                placeholder="0xnode@domain.com"
+                placeholder="you@example.com"
               />
             </label>
             <label className="mt-5 block text-sm font-medium">
-              Encrypted Payload / Message Body
+              Message
               <textarea
                 name="message"
                 required
                 rows={5}
-                className="mt-2 w-full resize-none rounded-md border border-slate-300 bg-transparent px-3 py-2.5 font-mono text-xs outline-none focus:border-accent dark:border-white/20"
-                placeholder="-----BEGIN PGP MESSAGE-----..."
+                className="mt-2 w-full resize-none rounded-md border border-slate-300 bg-transparent px-3 py-2.5 outline-none focus:border-accent dark:border-white/20"
+                placeholder="What's on your mind?"
               />
             </label>
             <button className="mt-5 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-emerald-400" type="submit">
-              Dispatch Encrypted Signal →
+              Send Message →
             </button>
             {status !== "idle" && (
               <p role="status" className={`mt-4 text-sm ${status === "success" ? "text-emerald-400" : "text-red-500"}`}>
