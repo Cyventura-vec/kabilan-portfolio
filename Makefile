@@ -2,7 +2,7 @@
 # z3r0byte Terminal Portfolio & CTF Challenge Makefile (Next.js Edition)
 # ==============================================================================
 
-.PHONY: help install dev build serve stop test status logs clean
+.PHONY: help install dev build serve up stop test status logs nginx-conf clean
 
 .DEFAULT_GOAL := help
 
@@ -29,17 +29,35 @@ build: ## Build Next.js production bundle
 	@echo "[+] Building Next.js application..."
 	@npm run build
 
-serve: ## Start Next.js server + Nginx reverse proxy (Port 8085)
-	@echo "[+] Launching Next.js frontend..."
-	@npm run build
-	@(npm run start -p $(NEXT_PORT) &)
-	@sleep 3
+nginx-conf: ## Generate nginx.conf from template using current directory
+	@ROOT_DIR=$(ROOT_DIR) envsubst '$$ROOT_DIR' < nginx.conf.template > nginx.conf
+	@echo "[+] nginx.conf generated for $(ROOT_DIR)"
+
+serve: build nginx-conf ## Start Next.js server + Nginx reverse proxy (Port 8085)
+	@echo "[+] Launching Next.js frontend on port $(NEXT_PORT)..."
+	@npx next start -p $(NEXT_PORT) &
+	@echo "[+] Waiting for Next.js to be ready..."
+	@for i in $$(seq 1 30); do curl -s http://127.0.0.1:$(NEXT_PORT) > /dev/null && break; sleep 1; done
 	@if command -v nginx > /dev/null 2>&1; then \
 		echo "[+] Starting Nginx reverse proxy on port $(PORT)..."; \
 		nginx -c $(NGINX_CONF); \
 		echo "[+] CTF Challenge active at http://localhost:$(PORT)"; \
 	else \
 		echo "[!] Nginx not found. Access Next.js directly at http://localhost:$(NEXT_PORT)"; \
+	fi
+
+up: install build nginx-conf ## Full deploy: install, build, and start challenge (use this on cloud)
+	@echo "[+] Starting Next.js on port $(NEXT_PORT)..."
+	@npx next start -p $(NEXT_PORT) &
+	@echo "[+] Waiting for Next.js to be ready..."
+	@for i in $$(seq 1 30); do curl -s http://127.0.0.1:$(NEXT_PORT) > /dev/null && break; sleep 1; done
+	@if command -v nginx > /dev/null 2>&1; then \
+		echo "[+] Starting Nginx reverse proxy on port $(PORT)..."; \
+		nginx -c $(NGINX_CONF); \
+		echo "[+] CTF Challenge active at http://localhost:$(PORT)"; \
+	else \
+		echo "[!] Nginx not found. Install with: sudo apt install nginx"; \
+		echo "[+] Next.js accessible at http://localhost:$(NEXT_PORT)"; \
 	fi
 
 stop: ## Stop Next.js and Nginx server instances
@@ -69,7 +87,7 @@ logs: ## Tail Nginx access and error logs
 	@echo "[+] Tailing Nginx logs in /tmp/..."
 	@tail -f /tmp/nginx_access.log /tmp/nginx_error.log 2>/dev/null || echo "[-] Log files not found."
 
-clean: ## Clean up Next.js build cache and temporary logs
+clean: ## Clean build cache, logs, and generated configs
 	@echo "[+] Cleaning Next.js build cache and temporary log files..."
-	@rm -rf .next /tmp/nginx_*.log /tmp/nginx.pid
+	@rm -rf .next /tmp/nginx_*.log /tmp/nginx.pid nginx.conf
 	@echo "[+] Cleanup complete."

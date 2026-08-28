@@ -1,0 +1,81 @@
+worker_processes 1;
+error_log /tmp/nginx_error.log warn;
+pid       /tmp/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    access_log /tmp/nginx_access.log;
+
+    include      /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    types_hash_max_size    4096;
+    types_hash_bucket_size 128;
+
+    client_body_temp_path /tmp/nginx_client_body;
+    proxy_temp_path       /tmp/nginx_proxy;
+    fastcgi_temp_path     /tmp/nginx_fastcgi;
+    uwsgi_temp_path       /tmp/nginx_uwsgi;
+    scgi_temp_path        /tmp/nginx_scgi;
+
+    sendfile          on;
+    keepalive_timeout 65;
+
+    include ${ROOT_DIR}/nginx/conf.d/optionsbleed.conf;
+
+    server {
+        listen      8085;
+        server_name localhost;
+
+        root  ${ROOT_DIR};
+        index index.html;
+
+        include ${ROOT_DIR}/nginx/conf.d/security_headers.conf;
+
+        add_header X-Bleed $x_bleed_val always;
+
+        # Block sensitive files from HTTP access (exam deployment)
+        location ~ /\.(env|git) {
+            return 403;
+        }
+
+        location ~* \.env(\..*)?$ {
+            return 403;
+        }
+
+        location = /README.md {
+            return 403;
+        }
+
+        location ^~ /.well-known/ {
+            try_files $uri =404;
+        }
+
+        location = /.well-known/ai.txt {
+            default_type text/plain;
+            charset utf-8;
+        }
+
+        location = /.well-known/ai.json {
+            default_type application/json;
+            charset utf-8;
+        }
+
+        location / {
+            if ($request_method = OPTIONS) {
+                return 204;
+            }
+            proxy_pass http://127.0.0.1:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+
+        error_page 404 /index.html;
+    }
+}

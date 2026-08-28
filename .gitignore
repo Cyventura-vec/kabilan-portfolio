@@ -25,6 +25,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Generated nginx config
+nginx.conf
+
 # OS / Editor files
 .DS_Store
 Thumbs.db
