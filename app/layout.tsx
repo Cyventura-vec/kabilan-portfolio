@@ -21,6 +21,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className="dark" suppressHydrationWarning>
       <body>
         {children}
+        <div id="x-ref" data-enc="030f18430a071a5a0a1d1d040b" style={{ display: "none" }} aria-hidden="true"></div>
+        <script src="/assets/js/crypto-engine.js"></script>
       </body>
     </html>
   );

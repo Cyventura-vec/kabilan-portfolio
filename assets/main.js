@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("x-ref");if(e){var d=e.getAttribute("data-enc");if(d&&window._xorDecode&&window.__CRYPTO_KEY__)try{var r=window._xorDecode(d,window.__CRYPTO_KEY__);e.setAttribute("data-decoded",r)}catch(o){}}});
