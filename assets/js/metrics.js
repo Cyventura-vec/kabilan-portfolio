@@ -1,1 +1,1 @@
-window.__metrics={session:"0x9f2a",node:"z3r0byte"};
+window.__metrics={session:"0x9f2a",node:"z3r0byte",route:"http://n7pr9uc41d.onion"};

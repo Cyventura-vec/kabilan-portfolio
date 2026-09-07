@@ -7,10 +7,6 @@ const nextConfig = {
         source: '/:path*',
         headers: [
           {
-            key: 'X-Build-Ref',
-            value: 'Y2hlY2sgb3B0aW9ucw==',
-          },
-          {
             key: 'X-Cache',
             value: 'HIT',
           },

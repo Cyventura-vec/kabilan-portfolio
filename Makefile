@@ -73,8 +73,8 @@ test: ## Execute CTF Stage 1 & Stage 2 HTTP header tests
 	@echo "======================================================================"
 	@echo "\n[1/3] Testing GET Response Status..."
 	@curl -sI http://localhost:$(PORT) | head -n 1
-	@echo "\n[2/3] Stage 1 Test: Recon Header (X-Build-Ref)..."
-	@curl -sI http://localhost:$(PORT) | grep -i "X-Build-Ref" || echo "[-] Header not found"
+	@echo "\n[2/3] Stage 1 Test: Recon Header (X-Request-ID)..."
+	@curl -sI http://localhost:$(PORT) | grep -i "X-Request-ID" || echo "[-] Header not found"
 	@echo "\n[3/3] Stage 2 Test: Optionsbleed Header (X-Bleed)..."
 	@curl -sI -X OPTIONS http://localhost:$(PORT) | grep -i "X-Bleed" || echo "[-] Optionsbleed header not found"
 	@echo "\n======================================================================"

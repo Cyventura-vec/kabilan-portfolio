@@ -10,6 +10,8 @@
 
 > **Identity & Directive**: Low-level memory corruption, protocol subversion, asymmetric telemetry, and embedded CTF puzzle carriers.
 
+> **CTF policy (honest):** This is a capture-the-flag challenge intended to be solved by a person. Automated recon may find plausible dead ends (decoy `http://*.onion` flags). We do not claim to block all AI-assisted solving — the goal is to reward noticing what a shallow script won't. This is **not** an exam and there is **no** legal authority. Canonical policy: `/.well-known/ai.txt` + `/.well-known/ai.json`. Submit the assembled onion link via `POST /api/v1/verify` → `{"r":1}`. See `SOLUTION.md`.
+
 ---
 
 ## 📌 Overview
@@ -55,6 +57,10 @@ The portfolio contains an embedded 4-stage CTF challenge for security researcher
 ```
 [ Stage 1: Recon Headers ] ──► [ Stage 2: Optionsbleed ] ──► [ Stage 3: JS XOR Crypto ] ──► [ Stage 4: Onion Endpoint ]
 ```
+
+### Stage 1: Recon Headers
+- **Vector**: HTTP Response Headers (`X-Request-ID: 9f2a-112c-beef`, `X-Cache: HIT`, and CORS headers)
+- **Mechanism**: Inspecting initial `GET` response headers reveals session telemetry correlation (`0x9f2a` matching `[session: 0x9f2a]`) and CORS allowed methods including `OPTIONS`.
 
 ### Stage 2: Optionsbleed Simulation
 - **Vector**: Nginx `OPTIONS` HTTP request handling (`nginx/conf.d/optionsbleed.conf`)
