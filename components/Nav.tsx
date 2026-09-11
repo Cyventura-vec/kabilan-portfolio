@@ -10,7 +10,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-stone-50/90 backdrop-blur dark:border-white/10 dark:bg-[#0a0c0b]/90">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
         <a href="#top" className="font-mono text-sm font-bold tracking-tight">
-          kabilam.dev
+          kabilan.dev
         </a>
         <div className="hidden items-center gap-6 md:flex">
           {links.map((link) => (

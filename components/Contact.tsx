@@ -44,17 +44,17 @@ export function Contact() {
               <div>
                 <span className="text-slate-400">email</span>
                 <span className="mx-2 text-slate-400">/</span>
-                <span className="text-accent">kabilam.devraj@gmail.com</span>
+                <span className="text-accent">kabilan.devraj@gmail.com</span>
               </div>
               <div>
                 <span className="text-slate-400">github</span>
                 <span className="mx-2 text-slate-400">/</span>
-                <span className="text-accent">github.com/kabilam-devraj</span>
+                <span className="text-accent">github.com/kabilan-devraj</span>
               </div>
               <div>
                 <span className="text-slate-400">twitter</span>
                 <span className="mx-2 text-slate-400">/</span>
-                <span className="text-accent">@kabilamdev</span>
+                <span className="text-accent">@k4bi1and3vr4j</span>
               </div>
             </div>
           </div>
